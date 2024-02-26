@@ -1,0 +1,14 @@
+﻿@model WebApplication5.Models.TeatarPretstava
+@{
+    ViewBag.Title = "AddPretstava";
+}
+
+<h2>AddPretstava</h2>
+@using (Html.BeginForm("AddPretstava", "Teatars"))
+            {
+                <div class="form-group">
+                    @Html.DropDownListFor(m=>m.PretstavaId,new SelectList(Model.Pretstava, "Id", "Name", new {@class="form-control"}))
+                    @Html.HiddenFor(m=>m.TeatarId)
+                </div>
+                <button type="submit">Save</button>
+            }

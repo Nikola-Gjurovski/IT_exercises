@@ -1,0 +1,16 @@
+﻿@model WebApplication4.Models.StoreAlbum
+@{
+    ViewBag.Title = "AddAlbum";
+}
+
+<h2>AddAlbum</h2>
+@using (Html.BeginForm("dodaj", "Stores"))
+            {
+                <div class="form-group">
+                    @Html.DropDownListFor(m => m.selectedAlbum, new SelectList(@Model.albums, "Id", "name", new { @class = "form-control" }))
+                    @Html.HiddenFor(m => m.selectedStore)
+                </div>
+               
+               
+              <button type="submit">Save</button>
+            }
